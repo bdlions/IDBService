@@ -1,5 +1,7 @@
 package org.viewsoft.service;
 
+import com.viewsoft.db.collections.StudentDAO;
+import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,10 +20,9 @@ public class StudentService {
         return response;
     }
     @RequestMapping("/getallstudents")
-    public String getAllStudents() {
+    public List<StudentDAO> getAllStudents() {
         com.viewsoft.service.StudentService studentService = new com.viewsoft.service.StudentService();
-        String response = studentService.getAllStudents();
-        return response;
+        return studentService.getAllStudents();
     }
     
     

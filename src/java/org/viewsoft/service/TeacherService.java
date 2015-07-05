@@ -1,5 +1,7 @@
 package org.viewsoft.service;
 
+import com.viewsoft.db.collections.TeacherDAO;
+import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,11 +21,10 @@ public class TeacherService {
         return response;
     }
     @RequestMapping("/getallteachers")
-    public String getAllTeachers() {
+    public List<TeacherDAO> getAllTeachers() {
         
         com.viewsoft.service.TeacherService teacherService = new com.viewsoft.service.TeacherService();
-        String response = teacherService.getAllTeachers();
-        return response;
+        return teacherService.getAllTeachers();
     }
     
     
